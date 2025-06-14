@@ -3,6 +3,8 @@ import { AppBar, Box, CssBaseline, Drawer, List, ListItem, ListItemButton, ListI
 import HomeIcon from '@mui/icons-material/Home';
 import SchoolIcon from '@mui/icons-material/School';
 import CategoryIcon from '@mui/icons-material/Category';
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+import StarIcon from '@mui/icons-material/Star';
 
 const drawerWidth = 280;
 
@@ -10,6 +12,8 @@ const menuItems = [
     { text: 'Головна', icon: <HomeIcon />, path: '/' },
     { text: 'Керування групами', icon: <CategoryIcon />, path: '/groups' },
     { text: 'Керування учнями', icon: <SchoolIcon />, path: '/students' },
+    { text: 'Керування викладачами', icon: <SupervisedUserCircleIcon />, path: '/teachers' },
+    { text: 'Керування спеціалізаціями', icon: <StarIcon />, path: '/specializations' },
 ];
 
 function Layout() {

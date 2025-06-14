@@ -52,7 +52,7 @@ function StudentProfilePage() {
                     <Typography variant="subtitle1" color="primary" sx={{ mb: 1, fontWeight: 'bold' }}>Активні зарахування</Typography>
                     {activeEnrollments.length > 0 ? (
                         activeEnrollments.map(e => (
-                            // === ОНОВЛЕННЯ ДИЗАЙНУ: ДОДАНО КОЛЬОРОВУ СМУГУ ===
+                            
                             <Box key={e.id} sx={{ p: 2, mb: 2, border: '1px solid', borderColor: 'success.light', borderRadius: 2, borderLeft: '5px solid', borderLeftColor: 'success.main', bgcolor: '#f1f8e9' }}>
                                 <Typography variant="body1"><b>Гурток:</b> {e.groups?.circles?.name ?? 'Інформація відсутня'}</Typography>
                                 <Typography variant="body1"><b>Група:</b> {e.groups?.name ?? 'Групу видалено'}</Typography>

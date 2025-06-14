@@ -10,8 +10,8 @@ import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SearchIcon from '@mui/icons-material/Search';
-import StudentForm from '../components/StudentForm.jsx';
-import ConfirmationDialog from '../modals/ConfirmationDialog.jsx'; // Імпортуємо новий компонент
+import StudentForm from '../modals/StudentForm.jsx';
+import ConfirmationDialog from '../modals/ConfirmationDialog.jsx'; 
 
 function StudentsPage() {
     const [students, setStudents] = useState([]);
@@ -23,7 +23,7 @@ function StudentsPage() {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
 
-    // Стан для діалогу підтвердження видалення
+    
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [studentToDelete, setStudentToDelete] = useState(null);
 
@@ -59,13 +59,13 @@ function StudentsPage() {
         }
     };
 
-    // Крок 1: Відкриття діалогу підтвердження
+    
     const handleDeleteClick = (studentId) => {
         setStudentToDelete(studentId);
         setConfirmOpen(true);
     };
 
-    // Крок 2: Виконання видалення після підтвердження
+    
     const executeDelete = async () => {
         setConfirmOpen(false);
         if (studentToDelete) {

@@ -28,7 +28,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SearchIcon from '@mui/icons-material/Search';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import GroupForm from '../components/GroupForm.jsx';
+import GroupForm from '../modals/GroupForm.jsx';
 import ConfirmationDialog from '../modals/ConfirmationDialog.jsx';
 import GroupRosterModal from '../modals/GroupRosterModal.jsx';
 
@@ -40,7 +40,7 @@ function GroupsPage() {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
 
-    // Стани для модальних вікон
+    
     const [formOpen, setFormOpen] = useState(false);
     const [editingGroup, setEditingGroup] = useState(null);
     const [confirmOpen, setConfirmOpen] = useState(false);
@@ -65,7 +65,7 @@ function GroupsPage() {
         fetchGroups();
     }, []);
 
-    // --- Обробники для форми групи (Створення/Редагування) ---
+    
     const handleOpenForm = (group = null) => {
         setEditingGroup(group);
         setFormOpen(true);
@@ -94,7 +94,7 @@ function GroupsPage() {
         }
     };
 
-    // --- Обробники для видалення групи ---
+    
     const handleDeleteClick = (groupId) => {
         setGroupToDelete(groupId);
         setConfirmOpen(true);
@@ -106,13 +106,13 @@ function GroupsPage() {
             setNotification({ open: true, message: `Помилка видалення: ${error.message}`, severity: 'error' });
         } else {
             setNotification({ open: true, message: 'Групу успішно видалено.', severity: 'success' });
-            fetchGroups(); // Оновлюємо список
+            fetchGroups(); 
         }
         setConfirmOpen(false);
         setGroupToDelete(null);
     };
 
-    // --- Обробники для модального вікна складу групи ---
+    
     const handleOpenRoster = (group) => {
         setSelectedGroupForRoster(group);
         setRosterModalOpen(true);

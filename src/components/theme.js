@@ -25,35 +25,35 @@ export const theme = createTheme({
     },
     typography: {
         fontFamily: '"Inter", "Helvetica", "Arial", sans-serif',
-        // === ЗБІЛЬШУЄМО ЩЕ БІЛЬШЕ ===
-        fontSize: 16, // Базовий розмір шрифту (був 15)
+        
+        fontSize: 16, 
         h4: {
             fontWeight: 700,
-            fontSize: '2.2rem', // Збільшуємо заголовки 4-го рівня
+            fontSize: '2.2rem', 
             color: '#172B4D',
         },
         h5: {
             fontWeight: 600,
-            fontSize: '1.6rem', // ...і 5-го
+            fontSize: '1.6rem', 
         },
         h6: {
             fontWeight: 600,
-            fontSize: '1.25rem', // ...і 6-го
+            fontSize: '1.25rem', 
         },
         body1: {
-            fontSize: '1rem', // тепер це 16px
+            fontSize: '1rem', 
         },
         button: {
-            fontSize: '1rem', // ~16px
+            fontSize: '1rem', 
             fontWeight: 600,
         }
     },
     components: {
-        // Збільшуємо висоту верхньої панелі
+        
         MuiToolbar: {
             styleOverrides: {
                 root: {
-                    minHeight: '72px !important', // Робимо AppBar вищим
+                    minHeight: '72px !important', 
                 }
             }
         },
@@ -70,7 +70,7 @@ export const theme = createTheme({
                 root: {
                     borderRadius: 10,
                     textTransform: 'none',
-                    padding: '12px 28px', // Ще більші кнопки
+                    padding: '12px 28px', 
                 },
                 startIcon: {
                     marginRight: '10px',
@@ -80,7 +80,7 @@ export const theme = createTheme({
         MuiCard: {
             styleOverrides: {
                 root: {
-                    borderRadius: 20, // Ще більш плавні кути
+                    borderRadius: 20, 
                     boxShadow: '0px 8px 25px rgba(0, 0, 0, 0.05)',
                 },
             },
@@ -90,7 +90,7 @@ export const theme = createTheme({
                 root: {
                     borderRadius: 10,
                     margin: '6px 12px',
-                    paddingTop: '14px', // Ще вищі пункти меню
+                    paddingTop: '14px', 
                     paddingBottom: '14px',
                 },
             },
@@ -101,7 +101,7 @@ export const theme = createTheme({
                     borderRadius: 10,
                 },
                 input: {
-                    padding: '16.5px 16px', // Дуже помітні поля вводу
+                    padding: '16.5px 16px', 
                 },
             },
         },
@@ -109,8 +109,8 @@ export const theme = createTheme({
             styleOverrides: {
                 root: {
 
-                    padding: '24px 20px', // Дуже просторі таблиці
-                    fontSize: '1.05rem', // Гарантуємо, що текст в таблиці також великий
+                    padding: '24px 20px', 
+                    fontSize: '1.05rem', 
                     verticalAlign: 'middle',
                 },
                 head: {
@@ -123,7 +123,7 @@ export const theme = createTheme({
         MuiAvatar: {
             styleOverrides: {
                 root: {
-                    width: 48, // Стандартні аватари також трохи більші
+                    width: 48, 
                     height: 48,
                 }
             }
@@ -131,14 +131,14 @@ export const theme = createTheme({
         MuiListItemIcon: {
             styleOverrides: {
                 root: {
-                    minWidth: 52, // Більше місця для іконок
+                    minWidth: 52, 
                 }
             }
         },
         MuiTooltip: {
             styleOverrides: {
                 tooltip: {
-                    fontSize: '0.9rem', // Робимо текст підказок більшим
+                    fontSize: '0.9rem', 
                     padding: '8px 12px',
                     borderRadius: 8,
                 }

@@ -35,9 +35,10 @@ function GroupProfilePage() {
     useEffect(() => {
         async function fetchGroupData() {
             setLoading(true);
+            
             const { data: groupData, error: groupError } = await supabase
                 .from('groups')
-                .select(`*, circles(name), teachers(full_name)`)
+                .select(`*, circles(name), teachers(id, full_name)`)
                 .eq('id', groupId)
                 .single();
 
@@ -81,18 +82,33 @@ function GroupProfilePage() {
 
             <Grid container spacing={3}>
                 <Grid item xs={12} md={4}>
-                    <Card>
+                    <Card sx={{ height: '100%' }}>
                         <CardContent>
                             <Typography variant="h6" gutterBottom>Основна інформація</Typography>
                             <List>
-                                <ListItem><ListItemIcon><CategoryIcon color="action" /></ListItemIcon><ListItemText primary="Гурток/Студія" secondary={group.circles?.name || 'Не вказано'} /></ListItem>
-                                <ListItem><ListItemIcon><SchoolIcon color="action" /></ListItemIcon><ListItemText primary="Керівник" secondary={group.teachers?.full_name || 'Не призначено'} /></ListItem>
+                                <ListItem>
+                                    <ListItemIcon><CategoryIcon color="action" /></ListItemIcon>
+                                    <ListItemText primary="Гурток/Студія" secondary={group.circles?.name || 'Не вказано'} />
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemIcon><SchoolIcon color="action" /></ListItemIcon>
+                                    <ListItemText
+                                        primary="Керівник"
+                                        secondary={
+                                            group.teachers ? (
+                                                <MuiLink component={RouterLink} to={`/teachers/${group.teachers.id}`} underline="hover" sx={{ fontWeight: 500 }}>
+                                                    {group.teachers.full_name}
+                                                </MuiLink>
+                                            ) : 'Не призначено'
+                                        }
+                                    />
+                                </ListItem>
                             </List>
                         </CardContent>
                     </Card>
                 </Grid>
                 <Grid item xs={12} md={8}>
-                    <Card>
+                    <Card sx={{ height: '100%' }}>
                         <CardContent>
                             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
                                 <PeopleAltIcon color="action" sx={{ mr: 1 }} />
