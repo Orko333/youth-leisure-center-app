@@ -1,12 +1,36 @@
-# React + Vite
+# Youth Leisure Center App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Цей проект — це веб-додаток для управління молодіжним дозвіллєвим центром. Він дозволяє керувати групами, студентами, викладачами та спеціалізаціями.
 
-Currently, two official plugins are available:
+## Основні можливості
+- Перегляд та редагування груп
+- Управління студентами та викладачами
+- Додавання та редагування спеціалізацій
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Технології
+- React
+- Vite
+- Supabase
 
-## Expanding the ESLint configuration
+## Запуск проекту
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Встановіть залежності:
+   ```bash
+   npm install
+   ```
+2. Запустіть локальний сервер:
+   ```bash
+   npm run dev
+   ```
+
+## Структура проекту
+- `src/components/` — компоненти інтерфейсу
+- `src/pages/` — сторінки додатку
+- `src/modals/` — модальні вікна
+- `src/DataBase/` — підключення до Supabase
+
+## Налаштування Supabase
+1. Створіть проект на [supabase.io](https://supabase.io/)
+2. Додайте свої ключі у `src/DataBase/supabaseClient.js`
+
+MIT 
